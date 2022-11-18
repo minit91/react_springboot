@@ -11,9 +11,7 @@
 // 숫자만 입력 가능한 input 컴포넌트이다
 // 함수형 컴포넌트에서 사용하는 상태변수
 // 대표모듈은 그냥 이름으로, 일반 모듈은 객체 구조분해 모양으로 가져온다.
-import React, {
-    useState
-} from 'react';
+import React, { useState } from 'react';
 
 // 함수형 컴포넌트
 const MyInput = (props) => {

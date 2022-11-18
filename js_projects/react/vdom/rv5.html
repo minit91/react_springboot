@@ -14,7 +14,7 @@
 
         // react => 화면을 갱신하는 성능이 월등하다 => 빠르다(짜기 나름)
         // 화면에 시:분:초를 표기 => 시간이 지나면 자동갱신 1초 단위 -> 반복타이머 해결(JS)
-        // 타이머 : 단발성 타이머(setTimeout - 1번만 일정시간에), 연속성 타이머(setInterval)
+        // **타이머 : 단발성 타이머(*setTimeout - 1번만 일정시간에), 연속성 타이머(*setInterval)
         // interval - 간격(시간)
         // setInterval 안에 다 넣으면 1000*1 간격에 따라서 타이머가 계속 업데이트된다.
         setInterval(() => {
@@ -24,12 +24,11 @@
             let s = d.getSeconds()
 
             let html = <div>
-                    <p>{ h }:{ m }:{ s }</p>
+                    <p>{ h } : { m } : { s }</p>
                 </div>
             
             ReactDOM.render( html, root )    
         }, 1000*1);
-        
         
     </script>
 </body>

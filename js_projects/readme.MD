@@ -1,4 +1,5 @@
 # 웹서비스(웹 어플리케이션) 제작
+
     - 프런트단
         - 일반 클라이언트가 보는 화면
         - html : 화면의 뼈대, 콘텐츠 담당, (html 코더)
@@ -12,7 +13,7 @@
             => javascript -> typescript(60%)
         - 클라이언트 중심으로 웹 개발 흐름 -> SPA(Single Page Application) 서비스
             => 구글 : angular js
-            => META : React js <-> nodejs, springboot 
+            => META : React js <-> nodejs, springboot
             => 커뮤니티 : Vue js <-> nodejs
     - 백엔드단 (백엔드 개발자)
         - ejb(1999~ -> spring -> springboot <= 전자정부프레임웍
@@ -24,18 +25,30 @@
         - nodejs (2010~
             - 언어 : javascript/typescript, 스프링쪽과 양대산맥
         - django/flask (2015~
-            - 언어 : python, 빅데이터, 머신러닝/딥러닝등의 예측모델등등 적절 
+            - 언어 : python, 빅데이터, 머신러닝/딥러닝등의 예측모델등등 적절
     - 데이터베이스
         - springboot <-> JPA(or ORM:느림) <-> Database(sql 데이터베이스 쿼리 언어->필요할대 조금씩)
         - RDMBS(mysql, maria, aws오로라 / oracle / ms-sql/,... ) <-> NoSql(몽고디비, 하둡, 구글 파이어베이스)
 
 # 교육 순서
+
     - java -> javascript/html/css -> reactjs/nodejs기반 -> springboot + react -> aws 배포 및 운영/리눅스 + 도메인 + https
 
-
 # 개발 환경 구축
+
     - IDE(개발통합환경) : vscode
     - 실행 환경 : node (https://nodejs.org/)
         - xx.LTS 버전 다운로드
         - 설치(특이사항없음)
         - node를 사용하는 툴이 먼저 가동중이라면 재가동 후 사용가능
+
+# 웹서비스 형태
+
+    - 프런트 중심
+        - 유저가 브라우저를 통해 보는 화면 -> 클라이언트 중심으로 랜더링
+        - Client Side Rendering (CSR)
+    - 백앤드 중심
+        - 유저가 브라우저를 통해 보는 화면 -> 백엔드 중심으로 랜더링(서버에서 이미 페이지를 완성해서 보낸다)
+        - Server Side Rendering (SSR)
+    - 혼용
+        - CSR과 SSR을 적절하게 섞는다.
