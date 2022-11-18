@@ -1,3 +1,4 @@
+//useState같은 것들은 Hooks라고 한다.
 import React, { Component, useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -46,7 +47,7 @@ class MySelect extends Component {
   render() {
     console.log('3 render()');
     console.log(this.props.citys);
-    // 배열 => map => 맴버조작 => 동적 배열 생성 => 화면반영
+    // 배열이 나오면 => map => 맴버조작 => 동적 배열 생성 => 화면반영 생각해야함.
     // this.props.citys 를 이용하여 동적으로 <option ...> 을 생성하여 화면에 반영하시오
     const options = this.props.citys.map(
       // JSX를 리턴하면 ()를 붙일수 있다
@@ -59,6 +60,7 @@ class MySelect extends Component {
     );
     return (
       <div>
+        {/* 선택한 값이 저장되게 value지정해줌, onChange 변화될 때 */}
         <select value={this.state.sel} onChange={this.onChange}>
           {/* <option value="서울">서울</option> */}
           {options}
@@ -72,10 +74,10 @@ MySelect.propTypes = {};
 
 // react 16.8 버전에서 Hooks를 도입하여 함수형 컴포넌트에서도 state를 사용할수 있게 제공
 const MySelect2 = (props) => {
-  // 함수형 컴포넌트에서 상태 변수를 정의하고, 초기화 하는 방법
-  // const [상태변수(읽기전용), set상태변수(값설정함수, 단생략가능)] = useState( 초기값:함수빼고 다됨 );
+  // ** 함수형 컴포넌트에서 상태 변수를 정의하고, 초기화하는 방법
+  // const [ 상태변수(읽기전용), set상태변수(값설정함수, 생략가능)] = useState( 초기값(최초 상태가 가질값): 함수 빼고 다됨 );
   const [sel, setSel] = useState('');
-  // select 태그의 자식 요소 구현
+  // select 태그의 자식 요소 구현 (props를 사용해야 index의 정보를 들고올 수 있다.)
   const options = props.citys.map((value, index) => (
     <option key={index} value={value}>
       {value}
@@ -87,6 +89,7 @@ const MySelect2 = (props) => {
   // jsx 동적 생성후 리턴
   return (
     <div>
+      {/* stste는 클레스 컴포넌트의 속성 */}
       <select value={sel} onChange={onChange}>
         {options}
       </select>
@@ -95,4 +98,5 @@ const MySelect2 = (props) => {
 };
 
 export { MySelect };
+// 대표지정하면 index.js의 오류는 사라짐
 export default MySelect2;

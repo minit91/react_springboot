@@ -32,7 +32,9 @@
 
 # 교육 순서
 
-    - java -> javascript/html/css -> reactjs/nodejs기반 -> springboot + react -> aws 배포 및 운영/리눅스 + 도메인 + https
+    - java -> javascript/html/css -> reactjs/nodejs기반 -> springboot + reac
+
+    t -> aws 배포 및 운영/리눅스 + 도메인 + https
 
 # 개발 환경 구축
 
