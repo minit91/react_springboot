@@ -12,11 +12,18 @@ import React, {
   useReducer, // 상태변수 각각에 대한 여러 상태를 부여할 때 사용(고급, 복잡)
 } from 'react'; // React가 대표 모듈이고 그 안에 서브 모듈이 있다.
 
-// PropTypes는 props의 타입을 강제할 경우 제한할 경우 사용
+import useInput from './useInput';
 import PropTypes from 'prop-types';
 MyHooksTest.propTypes = {};
 
 function MyHooksTest(props) {
+  // 커스텀 훅 ===================================================
+  // 밖에서 state, onChange 값을 받음
+  const [state, onChange] = useInput({
+    name: '',
+    nickname: '',
+  });
+  const { name, nickname } = state;
   // 상태변수 - `랜더링이 관여` ===================================
   const [uid, setUid] = useState('');
   const [upw, setUpw] = useState('');
@@ -93,10 +100,18 @@ function MyHooksTest(props) {
     <div>
       <input value={uid} onChange={onChangeUid} />
       <input value={upw} onChange={onChangeUpw} />
+      {/* 커스텀 훅으로 묘사 */}
+      <input name="name" value={name} onChange={onChange} placeholder="이름" />
+      <input
+        name="nickname"
+        value={nickname}
+        onChange={onChange}
+        placeholder="닉네임"
+      />
+      {name} / {nickname}
       <div>
         {uid} / {upw} / {level.current}
       </div>
-
       {/* number - 상태변수 */}
       <div>
         숫자를 입력하면 등록 버튼을 누르면 입련된 숫자들의 평균을 동적 계산한다
