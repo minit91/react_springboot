@@ -1,0 +1,40 @@
+/* css selector { css속성: 값, ... } */
+/* class 값이 nav인 요소 */
+.nav {
+    z-index: 1;
+    position: fixed;
+    top: 50px; 
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3),
+      0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+    border-radius: 5px;
+  }
+  
+  /* 반응형 웹 처리, 스크린의 가로길이가 1090 픽셀 이상이면 */
+  @media screen and (max-width: 1090px) {
+    .nav {
+      left: initial;
+      top: initial;
+      bottom: 0px;
+      width: 100%;
+    }
+  }
+  
+  /* class 값이 nav인 요소의 직계자식들중 a 요소 */
+  .nav a {
+    text-decoration: none;
+    color: #0008fc;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  /* class 값이 nav인 요소의 직계자식들중 a요소 마지막 자식 빼고 */
+  .nav a:not(:last-child) {
+    margin-bottom: 20px;
+  }
