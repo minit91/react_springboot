@@ -77,3 +77,12 @@
                 - 프로젝트 루트에 .prettierrc 파일 생성
                 - 파일(code:맥) > 기본설정 > 설정(setting) > format
                 on save : 체크( 체크되는데 전부 지정 )
+
+# 신규 프로젝트
+
+    - $ yarn create react-app movie-intro
+        - 멀티 페이지 구현
+    - $ yarn create react-app redux-test
+        - 멀티 페이지에서 특정 상태 정보를 접근(access), 수정(update)
+        - flux -> redux -> 다양한 third part 라이브러리(몹스, ...)
+        - 리액트에 없는 전역변수 개념을 도입하여 앱을 수월하게 개발하는 전략 -> redux
